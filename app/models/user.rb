@@ -9,4 +9,10 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :friendships
+  has_many :inverse_friendships, :class_name => 'Friendship', :foreign_key =>'friend_id'
+
+  def is_friend?(friend_id)
+    self.friendships.where(friend_id: friend_id, confirmed: true).exists? || self.inverse_friendships.where(user_id: friend_id, confirmed: true).exists?
+  end
 end
