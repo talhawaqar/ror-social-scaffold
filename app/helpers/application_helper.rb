@@ -18,13 +18,13 @@ module ApplicationHelper
 
   def friendship_status(user)
     if current_user.is_friend?(user)
-      return link_to 'Unfriend' , unfriend_user_path(user.id)
+      return link_to 'Unfriend' , unfriend_user_path(user.id), method: :post
     elsif current_user.friendships.where(friend_id: user.id, confirmed: false).exists?
-      return link_to 'Cancel Request' , cancel_request_user_path(user.id)
+      return link_to 'Cancel Request' , cancel_request_user_path(user.id), method: :post 
     elsif current_user.inverse_friendships.where(user_id: user.id, confirmed: false).exists?
-      "#{link_to 'Accept Request' , accept_user_path(user.id)}   #{link_to 'Reject Request' , reject_user_path(user.id)}".html_safe  
+      "#{link_to 'Accept Request' , accept_user_path(user.id), method: :post}   #{link_to 'Reject Request' , reject_user_path(user.id), method: :post}".html_safe  
     else
-      return link_to 'Send Request' , addfriend_user_path(user.id)
+      return link_to 'Send Request' , addfriend_user_path(user.id), method: :post
     end
   end
 end
