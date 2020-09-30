@@ -23,7 +23,6 @@ class UsersController < ApplicationController
 
   def reject
     f = Friendship.where(user_id: params[:id], friend_id: current_user.id)
-    byebug
     f.destroy_all
     redirect_to users_path
   end

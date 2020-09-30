@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  # rubocop:disable Layout/LineLength
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -10,9 +11,10 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :friendships
-  has_many :inverse_friendships, :class_name => 'Friendship', :foreign_key =>'friend_id'
+  has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id'
 
-  def is_friend?(friend_id)
-    self.friendships.where(friend_id: friend_id, confirmed: true).exists? || self.inverse_friendships.where(user_id: friend_id, confirmed: true).exists?
+  def friend?(friend_id)
+    friendships.where(friend_id: friend_id, confirmed: true).exists? || inverse_friendships.where(user_id: friend_id, confirmed: true).exists?
   end
 end
+# rubocop:enable Layout/LineLength
