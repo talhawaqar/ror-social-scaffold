@@ -10,17 +10,17 @@ RSpec.describe User, type: :model do
   DatabaseCleaner.start
 
   describe User do
-    context 'validates name' do
+    context 'validates the name of the user' do
       it { should validate_presence_of(:name) }
     end
 
-    context 'validates email' do
+    context 'validates email of the user' do
       it { should validate_presence_of(:email) }
       it { should allow_value('abc@gmail.com').for(:email) }
       it { should_not allow_value('abcgmail.com').for(:email) }
     end
 
-    context 'validates associations' do
+    context 'validates associations of the user' do
       it { should have_many(:posts) }
       it { should have_many(:comments) }
       it { should have_many(:friendships) }
