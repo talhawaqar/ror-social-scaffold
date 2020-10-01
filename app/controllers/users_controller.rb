@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   def unfriend
     f = current_user.friendships.where(friend_id: params[:id], confirmed: true)
     f.destroy_all
-    f = current_user.inverse_friendships.where(user_id: params[:id], confirmed: true)
+    f = current_user.friendships.where(friend_id: current_user.id, confirmed: true)
     f.destroy_all
     redirect_to users_path
   end
