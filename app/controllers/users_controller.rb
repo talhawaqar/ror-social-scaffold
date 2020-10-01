@@ -28,16 +28,17 @@ class UsersController < ApplicationController
   end
 
   def accept
-    f = Friendship.where(user_id: params[:id], friend_id: current_user.id).first
+    f = Friendship.find_by(user_id: params[:id], friend_id: current_user.id)
     f.confirmed = true
     f.save
+    Friendship.create(user_id: current_user.id, friend_id: params[:id], confirmed: true )
     redirect_to users_path
   end
 
   def unfriend
     f = current_user.friendships.where(friend_id: params[:id], confirmed: true)
     f.destroy_all
-    f = current_user.friendships.where(friend_id: current_user.id, confirmed: true)
+    f = Friendships.where(user_id: params[:id], friend_id: current_user.id, confirmed: true)
     f.destroy_all
     redirect_to users_path
   end
