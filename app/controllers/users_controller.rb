@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     f = Friendship.find_by(user_id: params[:id], friend_id: current_user.id)
     f.confirmed = true
     f.save
-    Friendship.create(user_id: current_user.id, friend_id: params[:id], confirmed: true )
+    Friendship.create(user_id: current_user.id, friend_id: params[:id], confirmed: true)
     redirect_to users_path
   end
 

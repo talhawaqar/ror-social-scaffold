@@ -1,90 +1,75 @@
-# Scaffold for social media app with Ruby on Rails
+# Social Media Project
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+> This project is was built on top of our knowledge of ActiveRecord associations and tests.
+
+## What it does
+
+Its a social media app similar to Facebook.
+
+*As a guest user:*
+
+- You will be able to create account/log in.
+- You can see only “Sign in” and “Sign out” page.
+
+*As a logged-in user:*
+
+- You will be able to see all users list.
+- You will be able to see selected user page with their user name and all posts written by them (the most recent posts on the top).
+- You will be able to send a friendship invitation.
+- You will see a button “Invite to friendship” next to the name of user who is not your friend yet - on both users’ list and single user page.
+- You will be able to see pending friendship invitations sent to you from other users.
+- You will be able to accept or reject friendships invitation.
+- You will be able to create new posts (text only).
+- You will be able to like/dislike posts (but you can like single post only once).
+- You will be able to add comments to posts.
+- You will be able to see “Timeline” page with posts (with number of likes and comments) written by you and all your friends (the most recent posts on the top).
+- Timeline page is the root page of the app.
 
 ## Built With
 
-- Ruby v2.7.0
-- Ruby on Rails v5.2.4
+- Ruby 2.7.0
+- Rails 6.0.3.2
+- VS Code
 
-## Live Demo
+## Prerequisites
 
-TBA
+In order to make the program work, you need to have ruby interpreter installed in your system. You can get the latest version of ruby from [official website](https://www.ruby-lang.org/en/downloads/).
 
-## Getting Started
+# Getting Started
 
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
-
-### Setup
-
-Instal gems with:
+To get a local copy of the repository please run the following commands on your terminal:
 
 ```
-bundle install
+$ cd <folder>
 ```
 
-Setup database with:
-
-```
-   rails db:create
-   rails db:migrate
-```
-
-### Github Actions
-
-To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
-
-1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
-2. Create the `feature/branch` and push.
-3. Start working on your milestone as usual.
-4. Open a PR from the `feature/branch` when your work is done.
-
-### Usage
-
-Start server with:
-
-```
-    rails server
+```bash
+$ git clone https://github.com/talhawaqar/ror-social-scaffold.git
+$ cd ror-social-scaffold
+$ bundle install
+$ yarn install --check-files
 ```
 
-Open `http://localhost:3000/` in your browser.
+# Authors
 
-### Run tests
+**Umair Ahmad**
 
-```
-    rpsec --format documentation
-```
+- Github: [@umairahmad125](https://github.com/UmairAhmad125)
+- Linkedin: https://www.linkedin.com/in/umair-ahmad-b5a89015a/
+- Twitter: [@umairahmadDP](https://twitter.com/umairahmadDP)
+- email: (umairahmad125@gmail.com)
 
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
-
-### Deployment
-
-TBA
-
-## Authors
-
-TBA
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!
-
-Feel free to check the [issues page](issues/).
+**Muhammad Talha Waqar**
+- Github: [@talhawaqar](https://github.com/talhawaqar)
+- Linkedin: [@Muhammad Talha Waqar](https://www.linkedin.com/in/talha-waqar-977257145/)
+- Twitter: [@MuhammadTalhaW4](https://twitter.com/MuhammadTalhaW4)
+- email: (talhawaqar007@hotmail.com).
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
+Give a :star:️ if you like this project!
 
 ## Acknowledgments
 
-TBA
-
-## 📝 License
-
-TBA
+- <a href="https://www.theodinproject.com/" target="_blank">The Odin Project</a>
+- <a href="https://guides.rubyonrails.org/" target="_blank">Rails Guides</a>
