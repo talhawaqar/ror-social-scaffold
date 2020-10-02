@@ -1,5 +1,4 @@
 # require 'rails_helper'
-# # rubocop:disable Metrics/BlockLength
 # describe 'the process of frind request send and accept', type: :feature do
 #   it 'sign up a new user and login to show page' do
 #     DatabaseCleaner.start
@@ -59,8 +58,6 @@
 #     DatabaseCleaner.clean
 #   end
 # end
-# rubocop:enable Metrics/BlockLength
-
 require 'rails_helper'
 # rubocop:disable Metrics/BlockLength
 describe 'the process of frind request send and accept', type: :feature do
