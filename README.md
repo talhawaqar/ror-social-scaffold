@@ -31,6 +31,10 @@ Its a social media app similar to Facebook.
 - Rails 6.0.3.2
 - VS Code
 
+## Demo
+
+[Live link](https://nameless-garden-37064.herokuapp.com/users/sign_in)
+
 ## Prerequisites
 
 In order to make the program work, you need to have ruby interpreter installed in your system. You can get the latest version of ruby from [official website](https://www.ruby-lang.org/en/downloads/).
